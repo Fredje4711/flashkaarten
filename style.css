@@ -43,29 +43,29 @@ h1 {
 /* Grid voor flashcards */
 .flashcard-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsief raster */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsief raster: 280px minimum breedte */
     gap: 25px; /* Ruimte tussen de kaarten */
     max-width: 1200px; /* Maximale breedte van het raster */
     width: 100%;
     justify-content: center;
-    padding: 0; /* Geen extra padding hier, wordt door body geregeld */
+    padding: 0;
 }
 
 /* Algemene styling voor de flashcard container */
 .flashcard {
     background-color: transparent;
-    width: 100%; /* Neemt de breedte van de grid cel */
+    width: 100%;
     height: 400px; /* Vaste hoogte voor kaarten */
-    perspective: 1000px; /* Voor 3D-effect van de flip */
+    perspective: 1000px;
     cursor: pointer;
     border-radius: var(--card-radius);
-    overflow: hidden; /* Zorgt dat de inhoud binnen de afgeronde hoeken blijft */
+    overflow: hidden;
     box-shadow: var(--card-shadow);
-    transition: transform 0.3s ease-in-out; /* Subtiele schaalvergroting bij hover */
+    transition: transform 0.3s ease-in-out;
 }
 
 .flashcard:hover {
-    transform: translateY(-5px); /* Klein omhoog springen bij hover */
+    transform: translateY(-5px);
 }
 
 /* Binnenste container voor de flip-animatie */
@@ -74,8 +74,8 @@ h1 {
     width: 100%;
     height: 100%;
     text-align: center;
-    transition: transform 0.6s; /* Animatie snelheid */
-    transform-style: preserve-3d; /* Nodig voor 3D-rotatie */
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
     border-radius: var(--card-radius);
 }
 
@@ -89,23 +89,21 @@ h1 {
     position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden; /* Zorgt ervoor dat de niet-zichtbare zijde verborgen is */
+    backface-visibility: hidden;
     border-radius: var(--card-radius);
-    background: linear-gradient(to bottom right, var(--main-color), var(--dark-main-color)); /* Standaard gradient */
+    background: linear-gradient(to bottom right, var(--main-color), var(--dark-main-color));
     color: white;
     
-    /* Flexbox voor de layout van H2, P, en Icon */
     display: flex;
-    flex-direction: column; /* Stapel h2, p, en icon verticaal */
-    align-items: center; /* Centreer h2, p, en icon horizontaal */
-    justify-content: flex-start; /* Lijn inhoud bovenaan uit */
-    /* De bovenste padding bepaalt de vaste hoogte van de Mythe/Feit titel */
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     padding: 25px 20px 20px 20px; 
-    box-sizing: border-box; /* Zorgt ervoor dat padding binnen de elementgrootte blijft */
+    box-sizing: border-box;
 }
 
 .flashcard-back {
-    background: linear-gradient(to top left, var(--light-main-color), var(--main-color)); /* Specifieke gradient voor de achterkant */
+    background: linear-gradient(to top left, var(--light-main-color), var(--main-color));
     transform: rotateY(180deg);
 }
 
@@ -114,31 +112,28 @@ h1 {
     font-size: 1.6em;
     font-weight: 600;
     color: white;
-    text-align: center; /* Zorg dat de titel zelf ook horizontaal gecentreerd is */
-    margin-bottom: 10px; /* Vaste afstand tussen h2 en de eerste regel van p */
-    /* Geen margin-top nodig, want de padding-top van de parent (.flashcard-front) zorgt voor de startpositie */
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .flashcard p {
     font-size: 1em;
     line-height: 1.5;
-    margin: 0; /* Belangrijk om default marges te resetten */
-    text-align: center; /* Horizontale centrering van de tekst binnen de paragraaf */
-    flex-grow: 1; /* Dit is cruciaal: Laat de paragraaf de resterende verticale ruimte opvullen */
-    /* GEEN 'display: flex' of interne verticale centrering op p zelf. Tekst stroomt normaal. */
+    margin: 0;
+    text-align: center;
+    flex-grow: 1; /* Laat de paragraaf de resterende verticale ruimte opvullen */
 }
 
 /* Styling voor de symbolische iconen */
 .myth-icon {
-    font-size: 6em; /* **AANGEPAST: DUBBEL ZO GROOT** */
+    font-size: 6em; /* Desktop grootte */
     color: white;
-    opacity: 0.7; /* Iets minder prominent */
-    margin-top: 20px; /* Ruimte boven het icoon, onder de tekst */
-    margin-bottom: 10px; /* Ruimte onder het icoon, naar de onderkant van de kaart */
+    opacity: 0.7;
+    margin-top: 20px;
+    margin-bottom: 10px;
     
-    /* Zorgt ervoor dat Font Awesome iconen correct worden weergegeven */
     font-family: "Font Awesome 6 Free" !important;
-    font-weight: 900 !important; /* Voor 'fas' (solid) iconen */
+    font-weight: 900 !important;
     font-style: normal !important;
     text-rendering: auto !important;
     -webkit-font-smoothing: antialiased !important;
@@ -147,7 +142,7 @@ h1 {
 }
 
 
-/* Responsiviteit voor kleinere schermen */
+/* Responsiviteit voor mobiele schermen (vanaf 768px breedte en kleiner) */
 @media (max-width: 768px) {
     h1 {
         font-size: 2em;
@@ -158,8 +153,9 @@ h1 {
     }
 
     .flashcard-grid {
-        grid-template-columns: 1fr; /* 1 kolom op kleine schermen */
-        padding: 0 10px; /* Iets meer padding aan de zijkanten */
+        grid-template-columns: repeat(2, 1fr); /* **AANGEPAST: 2 kolommen op mobiel** */
+        gap: 15px; /* Iets kleinere ruimte tussen kaarten voor compactheid */
+        padding: 0 10px;
     }
 
     .flashcard {
@@ -167,7 +163,7 @@ h1 {
     }
 
     .flashcard-front, .flashcard-back {
-        padding: 20px 15px 15px 15px; /* Aangepaste padding voor mobiel */
+        padding: 20px 10px 10px 10px; /* **AANGEPAST: Minder horizontale padding** */
     }
 
     .flashcard h2 {
@@ -180,12 +176,13 @@ h1 {
     }
 
     .myth-icon {
-        font-size: 5em; /* **AANGEPAST: DUBBEL ZO GROOT VOOR TABLET** */
-        margin-top: 15px; /* Aangepaste ruimte voor mobiel */
+        font-size: 4em; /* **AANGEPAST: Grootte voor mobiel, aangepast aan 2 kolommen** */
+        margin-top: 15px;
         margin-bottom: 8px;
     }
 }
 
+/* Responsiviteit voor kleinere mobiele schermen (vanaf 480px breedte en kleiner) */
 @media (max-width: 480px) {
     body {
         padding: 15px;
@@ -199,27 +196,33 @@ h1 {
         font-size: 0.9em;
     }
 
+    .flashcard-grid {
+        grid-template-columns: repeat(2, 1fr); /* **AANGEPAST: Blijft 2 kolommen, zelfs op kleinere telefoons** */
+        gap: 10px; /* Nog kleinere ruimte */
+        padding: 0 5px; /* Nog minder padding aan de zijkanten */
+    }
+
     .flashcard {
         height: 320px; /* Nog kleiner voor extra kleine schermen */
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Subtielere schaduw */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     }
 
     .flashcard-front, .flashcard-back {
-        padding: 15px 10px 10px 10px; /* Aangepaste padding voor kleine mobiel */
+        padding: 15px 8px 8px 8px; /* **AANGEPAST: Nog minder horizontale padding** */
     }
 
     .flashcard h2 {
-        font-size: 1.3em;
+        font-size: 1.2em; /* Iets kleinere titel */
         margin-bottom: 6px;
     }
 
     .flashcard p {
-        font-size: 0.9em;
+        font-size: 0.85em; /* Iets kleinere tekst */
     }
 
     .myth-icon {
-        font-size: 4em; /* **AANGEPAST: DUBBEL ZO GROOT VOOR TELEFOON** */
-        margin-top: 10px; /* Aangepaste ruimte voor kleine mobiel */
+        font-size: 3em; /* **AANGEPAST: Grootte voor kleine telefoons** */
+        margin-top: 10px;
         margin-bottom: 6px;
     }
 }
