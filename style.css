@@ -12,13 +12,14 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: var(--background-color);
+    /* DEBUG KLEUR: Standaard achtergrondkleur */
+    background-color: var(--background-color); 
     color: #333;
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    box-sizing: border-box; /* Zorgt ervoor dat padding binnen de elementgrootte blijft */
+    box-sizing: border-box;
 }
 
 header {
@@ -40,12 +41,12 @@ h1 {
     color: #555;
 }
 
-/* Grid voor flashcards */
+/* Grid voor flashcards (Desktop) */
 .flashcard-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsief raster: 280px minimum breedte */
-    gap: 25px; /* Ruimte tussen de kaarten */
-    max-width: 1200px; /* Maximale breedte van het raster */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Desktop/Grote schermen: flexibele kolommen, min 280px */
+    gap: 25px;
+    max-width: 1200px;
     width: 100%;
     justify-content: center;
     padding: 0;
@@ -55,7 +56,7 @@ h1 {
 .flashcard {
     background-color: transparent;
     width: 100%;
-    height: 400px; /* Vaste hoogte voor kaarten */
+    height: 400px;
     perspective: 1000px;
     cursor: pointer;
     border-radius: var(--card-radius);
@@ -132,8 +133,9 @@ h1 {
     margin-top: 20px;
     margin-bottom: 10px;
     
+    /* BELANGRIJK: Zorgt ervoor dat Font Awesome iconen correct worden weergegeven */
     font-family: "Font Awesome 6 Free" !important;
-    font-weight: 900 !important;
+    font-weight: 900 !important; /* Voor 'fas' (solid) iconen */
     font-style: normal !important;
     text-rendering: auto !important;
     -webkit-font-smoothing: antialiased !important;
@@ -144,16 +146,12 @@ h1 {
 
 /* Responsiviteit voor mobiele schermen (vanaf 768px breedte en kleiner) */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 2em;
+    /* DEBUG KLEUR: ZOU LICHTROOD MOETEN WORDEN OP DE MEESTE TELEFOONS */
+    body {
+        background-color: lightcoral; 
     }
-
-    .intro-text {
-        font-size: 1em;
-    }
-
     .flashcard-grid {
-        grid-template-columns: repeat(2, 1fr); /* **AANGEPAST: 2 kolommen op mobiel** */
+        grid-template-columns: repeat(2, 1fr); /* **NU WEL: 2 kolommen op mobiel** */
         gap: 15px; /* Iets kleinere ruimte tussen kaarten voor compactheid */
         padding: 0 10px;
     }
@@ -163,7 +161,7 @@ h1 {
     }
 
     .flashcard-front, .flashcard-back {
-        padding: 20px 10px 10px 10px; /* **AANGEPAST: Minder horizontale padding** */
+        padding: 20px 10px 10px 10px; /* Minder horizontale padding voor smallere kaarten */
     }
 
     .flashcard h2 {
@@ -176,7 +174,7 @@ h1 {
     }
 
     .myth-icon {
-        font-size: 4em; /* **AANGEPAST: Grootte voor mobiel, aangepast aan 2 kolommen** */
+        font-size: 4.5em; /* Grootte voor mobiel, aangepast aan 2 kolommen */
         margin-top: 15px;
         margin-bottom: 8px;
     }
@@ -184,20 +182,12 @@ h1 {
 
 /* Responsiviteit voor kleinere mobiele schermen (vanaf 480px breedte en kleiner) */
 @media (max-width: 480px) {
+    /* DEBUG KLEUR: ZOU LICHTBLAUW MOETEN WORDEN OP KLEINERE TELEFOONS */
     body {
-        padding: 15px;
+        background-color: lightblue;
     }
-
-    h1 {
-        font-size: 1.8em;
-    }
-
-    .intro-text {
-        font-size: 0.9em;
-    }
-
     .flashcard-grid {
-        grid-template-columns: repeat(2, 1fr); /* **AANGEPAST: Blijft 2 kolommen, zelfs op kleinere telefoons** */
+        grid-template-columns: repeat(2, 1fr); /* Blijft 2 kolommen, zelfs op kleinere telefoons */
         gap: 10px; /* Nog kleinere ruimte */
         padding: 0 5px; /* Nog minder padding aan de zijkanten */
     }
@@ -208,7 +198,7 @@ h1 {
     }
 
     .flashcard-front, .flashcard-back {
-        padding: 15px 8px 8px 8px; /* **AANGEPAST: Nog minder horizontale padding** */
+        padding: 15px 8px 8px 8px; /* Nog minder horizontale padding */
     }
 
     .flashcard h2 {
@@ -221,7 +211,7 @@ h1 {
     }
 
     .myth-icon {
-        font-size: 3em; /* **AANGEPAST: Grootte voor kleine telefoons** */
+        font-size: 3.5em; /* Grootte voor kleine telefoons */
         margin-top: 10px;
         margin-bottom: 6px;
     }
