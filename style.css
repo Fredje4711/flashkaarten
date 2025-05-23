@@ -11,14 +11,13 @@
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    /* padding-bottom wordt toegevoegd aan de footer */
-    padding-top: 20px; /* Alleen padding bovenaan voor content */
+    padding-top: 20px; 
     background-color: var(--background-color); 
     color: #333;
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh; /* Zorgt ervoor dat de footer onderaan plakt als er weinig content is */
+    min-height: 100vh;
     box-sizing: border-box;
 }
 
@@ -50,8 +49,8 @@ h1 {
     width: 100%;
     justify-content: center;
     padding: 0;
-    margin-bottom: 50px; /* Ruimte tussen de laatste kaart en de footer */
-    flex-grow: 1; /* Laat de main content de resterende verticale ruimte opvullen */
+    margin-bottom: 50px;
+    flex-grow: 1;
 }
 
 /* Algemene styling voor de flashcard container */
@@ -167,7 +166,7 @@ footer p {
 
 .social-links {
     display: flex;
-    flex-wrap: wrap; /* Zorgt ervoor dat links naar de volgende regel gaan op kleine schermen */
+    flex-wrap: wrap; /* NIEUW: Zorgt ervoor dat links naar de volgende regel gaan */
     justify-content: center; /* Centreer de links horizontaal */
     gap: 15px; /* Ruimte tussen de sociale links */
     margin-top: 15px;
@@ -199,36 +198,36 @@ footer p {
 @media (max-width: 768px) {
     .flashcard-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-        padding: 0 10px;
-        margin-bottom: 30px; /* Minder ruimte op mobiel */
+        gap: 20px; /* **AANGEPAST: Iets grotere gap om kaarten smaller te maken** */
+        padding: 0 15px; /* **AANGEPAST: Iets meer padding aan de zijkanten** */
+        margin-bottom: 30px; 
     }
 
     .flashcard {
-        height: 300px;
+        height: 280px; /* **AANGEPAST: Nog minder hoge kaarten** */
     }
 
     .flashcard-front, .flashcard-back {
-        padding: 15px 10px 10px 10px;
+        padding: 15px 10px 10px 10px; /* Kleinere padding om inhoud te laten passen */
     }
 
     .flashcard h2 {
-        font-size: 1.3em;
+        font-size: 1.3em; 
         margin-bottom: 8px;
     }
 
     .flashcard p {
-        font-size: 0.9em;
+        font-size: 0.85em; /* Kleinere tekst */
     }
 
     .myth-icon {
-        font-size: 4em;
+        font-size: 4em; 
         margin-top: 15px;
         margin-bottom: 8px;
     }
 
     footer {
-        padding: 20px 15px; /* Minder padding op mobiel */
+        padding: 20px 15px;
         margin-top: 30px;
     }
 
@@ -238,13 +237,24 @@ footer p {
     }
 
     .social-links {
-        flex-direction: column; /* Links onder elkaar op kleinere schermen */
-        gap: 10px; /* Minder ruimte tussen gestapelde links */
+        /* NIEUW: Maak links per 2 kolommen */
+        flex-direction: row; /* Zorgt ervoor dat ze naast elkaar proberen te staan */
+        gap: 10px; /* Ruimte tussen de links */
         margin-top: 10px;
     }
 
     .social-links a {
+        flex: 1 1 calc(50% - 10px); /* Zorgt dat elke link 50% breedte inneemt, minus de helft van de gap */
         font-size: 0.85em;
+        /* Tekst centreren binnen elke link om het netter te maken bij flex-basis */
+        justify-content: center; /* Horizontaal centreren van inhoud binnen de link */
+        text-align: center; /* Voor de tekst zelf */
+    }
+
+    .social-links .social-icon {
+        width: 22px;
+        height: 22px;
+        margin-right: 5px; /* Iets minder marge tussen icoon en tekst */
     }
 }
 
@@ -252,18 +262,18 @@ footer p {
 @media (max-width: 480px) {
     .flashcard-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-        padding: 0 5px;
+        gap: 15px; /* **AANGEPAST: Iets grotere gap** */
+        padding: 0 10px; /* **AANGEPAST: Iets meer padding** */
         margin-bottom: 20px;
     }
 
     .flashcard {
-        height: 270px;
+        height: 250px; /* **AANGEPAST: Nog minder hoge kaarten** */
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     }
 
     .flashcard-front, .flashcard-back {
-        padding: 10px 8px 8px 8px;
+        padding: 10px 6px 6px 6px; /* Nog minder padding */
     }
 
     .flashcard h2 {
@@ -272,11 +282,11 @@ footer p {
     }
 
     .flashcard p {
-        font-size: 0.8em;
+        font-size: 0.75em; /* Nog kleinere tekst */
     }
 
     .myth-icon {
-        font-size: 3em;
+        font-size: 3.5em; /* Nog kleinere iconen */
         margin-top: 10px;
         margin-bottom: 6px;
     }
@@ -296,11 +306,13 @@ footer p {
     }
 
     .social-links a {
+        flex: 1 1 calc(50% - 8px); /* Aangepaste flex-basis voor kleinere gap */
         font-size: 0.8em;
     }
 
     .social-links .social-icon {
-        width: 20px;
-        height: 20px;
+        width: 18px;
+        height: 18px;
+        margin-right: 4px;
     }
 }
