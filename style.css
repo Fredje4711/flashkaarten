@@ -11,19 +11,20 @@
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    padding: 5px;
+    /* padding-bottom wordt toegevoegd aan de footer */
+    padding-top: 20px; /* Alleen padding bovenaan voor content */
     background-color: var(--background-color); 
     color: #333;
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
+    min-height: 100vh; /* Zorgt ervoor dat de footer onderaan plakt als er weinig content is */
     box-sizing: border-box;
 }
 
 header {
     text-align: center;
-    margin-bottom: 5px;
+    margin-bottom: 30px;
     max-width: 800px;
     width: 100%;
 }
@@ -31,7 +32,7 @@ header {
 h1 {
     color: var(--dark-main-color);
     font-size: 2.5em;
-    margin-bottom: 0px;
+    margin-bottom: 10px;
     font-weight: 600;
 }
 
@@ -49,6 +50,8 @@ h1 {
     width: 100%;
     justify-content: center;
     padding: 0;
+    margin-bottom: 50px; /* Ruimte tussen de laatste kaart en de footer */
+    flex-grow: 1; /* Laat de main content de resterende verticale ruimte opvullen */
 }
 
 /* Algemene styling voor de flashcard container */
@@ -142,67 +145,162 @@ h1 {
 }
 
 
+/* NIEUWE FOOTER STYLING */
+footer {
+    width: 100%;
+    max-width: 1200px; /* Match max-width of flashcard grid */
+    background-color: var(--dark-main-color); /* Donkere variant van de hoofdkleur */
+    color: white;
+    text-align: center;
+    padding: 25px 20px;
+    box-sizing: border-box;
+    border-radius: var(--card-radius); /* Afgeronde hoeken, passend bij de kaarten */
+    margin-top: 50px; /* Ruimte boven de footer */
+    box-shadow: var(--card-shadow); /* Schaduw, passend bij de kaarten */
+}
+
+footer p {
+    margin: 0 0 10px 0; /* Marges voor paragrafen in de footer */
+    font-size: 0.95em;
+    line-height: 1.4;
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap; /* Zorgt ervoor dat links naar de volgende regel gaan op kleine schermen */
+    justify-content: center; /* Centreer de links horizontaal */
+    gap: 15px; /* Ruimte tussen de sociale links */
+    margin-top: 15px;
+}
+
+.social-links a {
+    display: flex; /* Zorgt dat icoon en tekst naast elkaar staan */
+    align-items: center; /* Lijn icoon en tekst verticaal uit */
+    color: white;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--light-main-color); /* Lichtere kleur bij hover */
+}
+
+.social-links .social-icon {
+    width: 24px; /* Vaste breedte voor iconen */
+    height: 24px; /* Vaste hoogte voor iconen */
+    margin-right: 8px; /* Ruimte tussen icoon en tekst */
+    vertical-align: middle; /* Zorgt voor betere verticale uitlijning */
+    filter: brightness(1.2); /* Maakt de iconen iets lichter, zodat ze opvallen */
+}
+
+
 /* Responsiviteit voor mobiele schermen (vanaf 768px breedte en kleiner) */
 @media (max-width: 768px) {
     .flashcard-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 kolommen */
-        gap: 15px; /* Iets kleinere ruimte tussen kaarten */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
         padding: 0 10px;
+        margin-bottom: 30px; /* Minder ruimte op mobiel */
     }
 
     .flashcard {
-        height: 300px; /* **AANGEPAST: Minder hoge kaarten** */
+        height: 300px;
     }
 
     .flashcard-front, .flashcard-back {
-        padding: 15px 10px 10px 10px; /* **AANGEPAST: Minder verticale en horizontale padding** */
+        padding: 15px 10px 10px 10px;
     }
 
     .flashcard h2 {
-        font-size: 1.3em; /* **AANGEPAST: Kleinere titel** */
+        font-size: 1.3em;
         margin-bottom: 8px;
     }
 
     .flashcard p {
-        font-size: 0.9em; /* **AANGEPAST: Kleinere tekst** */
+        font-size: 0.9em;
     }
 
     .myth-icon {
-        font-size: 4em; /* **AANGEPAST: Kleinere iconen, passend bij compactere kaarten** */
-        margin-top: 15px; /* **AANGEPAST: Minder ruimte boven icoon** */
+        font-size: 4em;
+        margin-top: 15px;
         margin-bottom: 8px;
+    }
+
+    footer {
+        padding: 20px 15px; /* Minder padding op mobiel */
+        margin-top: 30px;
+    }
+
+    footer p {
+        font-size: 0.85em;
+        margin-bottom: 8px;
+    }
+
+    .social-links {
+        flex-direction: column; /* Links onder elkaar op kleinere schermen */
+        gap: 10px; /* Minder ruimte tussen gestapelde links */
+        margin-top: 10px;
+    }
+
+    .social-links a {
+        font-size: 0.85em;
     }
 }
 
 /* Responsiviteit voor kleinere mobiele schermen (vanaf 480px breedte en kleiner) */
 @media (max-width: 480px) {
     .flashcard-grid {
-        grid-template-columns: repeat(2, 1fr); /* Blijft 2 kolommen */
-        gap: 10px; /* Nog kleinere ruimte */
-        padding: 0 5px; /* Nog minder padding aan de zijkanten */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 0 5px;
+        margin-bottom: 20px;
     }
 
     .flashcard {
-        height: 270px; /* **AANGEPAST: Nog minder hoge kaarten** */
+        height: 270px;
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     }
 
     .flashcard-front, .flashcard-back {
-        padding: 10px 8px 8px 8px; /* **AANGEPAST: Nog minder verticale en horizontale padding** */
+        padding: 10px 8px 8px 8px;
     }
 
     .flashcard h2 {
-        font-size: 1.1em; /* **AANGEPAST: Kleinere titel** */
+        font-size: 1.1em;
         margin-bottom: 6px;
     }
 
     .flashcard p {
-        font-size: 0.8em; /* **AANGEPAST: Kleinere tekst** */
+        font-size: 0.8em;
     }
 
     .myth-icon {
-        font-size: 3em; /* **AANGEPAST: Kleinere iconen** */
-        margin-top: 10px; /* **AANGEPAST: Minder ruimte boven icoon** */
+        font-size: 3em;
+        margin-top: 10px;
         margin-bottom: 6px;
+    }
+
+    footer {
+        padding: 15px 10px;
+        margin-top: 20px;
+    }
+
+    footer p {
+        font-size: 0.8em;
+        margin-bottom: 6px;
+    }
+
+    .social-links {
+        gap: 8px;
+    }
+
+    .social-links a {
+        font-size: 0.8em;
+    }
+
+    .social-links .social-icon {
+        width: 20px;
+        height: 20px;
     }
 }
