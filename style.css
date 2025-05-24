@@ -96,13 +96,14 @@ h1 {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: 20px 15px;
+    padding: 12px 10px;
     box-sizing: border-box;
 }
 
 .flashcard-back {
     background: linear-gradient(to top left, var(--light-main-color), var(--main-color));
     transform: rotateY(180deg);
+    justify-content: flex-start;
 }
 
 .flashcard h2 {
@@ -110,7 +111,7 @@ h1 {
     font-weight: 600;
     color: white;
     text-align: center;
-    margin-bottom: 8px;
+    margin: 4px 0 6px;
 }
 
 .flashcard p {
@@ -119,14 +120,15 @@ h1 {
     margin: 0;
     text-align: center;
     flex-grow: 1; 
+    overflow-y: auto;
 }
 
 .myth-icon {
     font-size: 3.5em;
     color: white;
     opacity: 0.7;
-    margin-top: 10px;
-    margin-bottom: 8px;
+    margin-top: 6px;
+    margin-bottom: 6px;
     font-family: "Font Awesome 6 Free" !important;
     font-weight: 900 !important;
     font-style: normal !important;
