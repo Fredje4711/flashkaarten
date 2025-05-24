@@ -1,66 +1,63 @@
 :root {
     --main-color: #23a9e4;
-    --dark-main-color: #1a7ea7; /* Iets donkerder voor gradiënt */
-    --light-main-color: #60c0eb; /* Iets lichter voor gradiënt */
-    --background-color: #e0f2f7; /* Zeer lichte variant van de hoofdkleur */
+    --dark-main-color: #1a7ea7;
+    --light-main-color: #60c0eb;
+    --background-color: #23a9e4;
     --card-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     --card-radius: 15px;
 }
 
-/* Algemene reset & basisstyling */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding-top: 20px; 
-    padding-bottom: 20px; /* Standaard padding onderaan */
+    padding-bottom: 20px; 
     background-color: var(--background-color); 
-    color: #333;
+    color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
+    min-height: 100vh; 
     box-sizing: border-box;
 }
 
 header {
     text-align: center;
-    margin-bottom: 30px; 
+    margin-bottom: 20px;
     max-width: 800px;
     width: 100%;
 }
 
 h1 {
-    color: var(--dark-main-color);
-    font-size: 2.5em;
-    margin-bottom: 10px; 
-    font-weight: 600;
+    color: #ffffff;
+    font-size: 2.2em;
+    margin-bottom: 8px; 
+    font-weight: 700;
 }
 
 .intro-text {
-    font-size: 1.1em;
-    color: #555;
+    font-size: 1em;
+    color: #ffffff;
     margin-top: 0; 
-    margin-bottom: 20px; 
+    margin-bottom: 15px; 
 }
 
-/* Grid voor flashcards (Desktop) */
 .flashcard-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-    gap: 25px;
-    max-width: 1200px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+    gap: 20px;
+    max-width: 1000px;
     width: 100%;
     justify-content: center;
-    padding: 0;
-    margin-bottom: 50px; 
+    padding: 0 10px;
+    margin-bottom: 40px; 
     flex-grow: 1; 
 }
 
-/* Algemene styling voor de flashcard container */
 .flashcard {
     background-color: transparent;
     width: 100%;
-    height: 400px; /* Vaste hoogte voor kaarten op desktop */
+    height: 280px;
     perspective: 1000px;
     cursor: pointer;
     border-radius: var(--card-radius);
@@ -73,7 +70,6 @@ h1 {
     transform: translateY(-5px);
 }
 
-/* Binnenste container voor de flip-animatie */
 .flashcard-inner {
     position: relative;
     width: 100%;
@@ -84,12 +80,10 @@ h1 {
     border-radius: var(--card-radius);
 }
 
-/* Wanneer de kaart omgedraaid is */
 .flashcard.flipped .flashcard-inner {
     transform: rotateY(180deg);
 }
 
-/* Voorkant en achterkant van de kaart */
 .flashcard-front, .flashcard-back {
     position: absolute;
     width: 100%;
@@ -98,12 +92,11 @@ h1 {
     border-radius: var(--card-radius);
     background: linear-gradient(to bottom right, var(--main-color), var(--dark-main-color));
     color: white;
-    
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: 25px 20px 20px 20px; 
+    padding: 20px 15px;
     box-sizing: border-box;
 }
 
@@ -112,31 +105,28 @@ h1 {
     transform: rotateY(180deg);
 }
 
-/* Styling voor titels en paragrafen binnen de kaarten */
 .flashcard h2 {
-    font-size: 1.6em;
+    font-size: 1.3em;
     font-weight: 600;
     color: white;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .flashcard p {
-    font-size: 1em;
-    line-height: 1.5;
+    font-size: 0.9em;
+    line-height: 1.4;
     margin: 0;
     text-align: center;
     flex-grow: 1; 
 }
 
-/* Styling voor de symbolische iconen */
 .myth-icon {
-    font-size: 6em; 
+    font-size: 3.5em;
     color: white;
     opacity: 0.7;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    
+    margin-top: 10px;
+    margin-bottom: 8px;
     font-family: "Font Awesome 6 Free" !important;
     font-weight: 900 !important;
     font-style: normal !important;
@@ -146,212 +136,56 @@ h1 {
     display: inline-block !important;
 }
 
-
-/* NIEUWE FOOTER STYLING */
 footer {
     width: 100%;
-    max-width: 1200px; 
-    background-color: var(--dark-main-color); 
+    max-width: 1200px;
+    background-color: var(--dark-main-color);
     color: white;
     text-align: center;
-    padding: 25px 20px;
+    padding: 20px 15px;
     box-sizing: border-box;
-    border-radius: var(--card-radius); 
-    margin-top: 50px; 
-    box-shadow: var(--card-shadow); 
+    border-radius: var(--card-radius);
+    margin-top: 30px;
+    box-shadow: var(--card-shadow);
 }
 
 footer p {
-    margin: 0 0 10px 0; 
-    font-size: 0.95em;
+    margin: 0 0 8px 0;
+    font-size: 0.9em;
     line-height: 1.4;
 }
 
 .social-links {
     display: flex;
-    flex-wrap: wrap; 
-    justify-content: center; 
-    gap: 15px; 
-    margin-top: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
 }
 
 .social-links a {
-    display: flex; 
-    align-items: center; 
+    display: flex;
+    align-items: center;
     color: white;
     text-decoration: none;
-    font-size: 0.9em;
+    font-size: 0.85em;
     transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-    color: var(--light-main-color); 
+    color: var(--light-main-color);
 }
 
 .social-links .social-icon {
-    width: 24px; 
-    height: 24px; 
-    margin-right: 8px; 
-    vertical-align: middle; 
-    filter: brightness(1.2); 
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+    vertical-align: middle;
+    filter: brightness(1.2);
 }
 
-
-/* Responsiviteit voor mobiele schermen (vanaf 768px breedte en kleiner) */
-@media (max-width: 768px) {
-    /* **DEBUG KLEUR: ZOU ROOD MOETEN WORDEN OP TABLETS EN GROTERE TELEFOONS** */
-    body {
-        padding-top: 15px;
-        padding-bottom: 15px;
-        background-color: lightcoral; /* DEBUG COLOR */
-    }
-
-    header {
-        margin-bottom: 20px;
-    }
-    h1 {
-        font-size: 2em;
-        margin-bottom: 5px;
-    }
-    .intro-text {
-        font-size: 1em;
-        margin-bottom: 15px;
-    }
-
-    .flashcard-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px; /* **AANGEPAST: Minder gap voor compactheid** */
-        padding: 0 10px; /* **AANGEPAST: Meer padding** */
-        margin-bottom: 30px; 
-    }
-
-    .flashcard {
-        height: 230px; /* **AANGEPAST: Zeer compacte hoogte** */
-    }
-
-    .flashcard-front, .flashcard-back {
-        padding: 10px 8px 8px 8px; /* **AANGEPAST: Minder padding** */
-    }
-
-    .flashcard h2 {
-        font-size: 1.1em; /* **AANGEPAST: Kleinere titel** */
-        margin-bottom: 5px; /* **AANGEPAST: Minder marge** */
-    }
-
-    .flashcard p {
-        font-size: 0.8em; /* **AANGEPAST: Kleinere tekst** */
-        line-height: 1.3; /* **AANGEPAST: Compactere regelafstand** */
-    }
-
-    .myth-icon {
-        font-size: 3em; /* **AANGEPAST: Kleinere iconen** */
-        margin-top: 8px; /* **AANGEPAST: Minder ruimte boven icoon** */
-        margin-bottom: 5px; /* **AANGEPAST: Minder ruimte onder icoon** */
-    }
-
-    footer {
-        padding: 15px 10px; /* **AANGEPAST: Compactere footer padding** */
-        margin-top: 25px; /* **AANGEPAST: Minder marge boven footer** */
-    }
-
-    footer p {
-        font-size: 0.8em; /* **AANGEPAST: Kleinere footer tekst** */
-        margin-bottom: 6px;
-    }
-
-    .social-links {
-        flex-direction: row; /* Links naast elkaar */
-        gap: 10px; /* **AANGEPAST: Compacte gap** */
-    }
-
-    .social-links a {
-        flex: 1 1 calc(50% - 5px); /* Elke link 50% breedte, minus de helft van de gap (10px/2) */
-        font-size: 0.8em;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .social-links .social-icon {
-        width: 20px;
-        height: 20px;
-        margin-right: 4px;
-    }
-}
-
-/* Responsiviteit voor kleinere mobiele schermen (vanaf 480px breedte en kleiner) */
-@media (max-width: 480px) {
-    /* **DEBUG KLEUR: ZOU PAARS MOETEN WORDEN OP KLEINERE TELEFOONS** */
-    body {
-        padding-top: 10px;
-        padding-bottom: 10px;
-        background-color: purple; /* DEBUG COLOR */
-    }
-    header {
-        margin-bottom: 15px;
-    }
-    h1 {
-        font-size: 1.6em; /* **AANGEPAST: Nog kleinere titel** */
-        margin-bottom: 3px;
-    }
-    .intro-text {
-        font-size: 0.8em; /* **AANGEPAST: Nog kleinere intro tekst** */
-        margin-bottom: 10px;
-    }
-
-    .flashcard-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px; /* **AANGEPAST: Nog kleinere gap** */
-        padding: 0 8px; /* **AANGEPAST: Nog minder padding** */
-        margin-bottom: 20px;
-    }
-
-    .flashcard {
-        height: 200px; /* **AANGEPAST: Ultieme compacte hoogte** */
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    }
-
-    .flashcard-front, .flashcard-back {
-        padding: 8px 5px 5px 5px; /* **AANGEPAST: Minimale padding** */
-    }
-
-    .flashcard h2 {
-        font-size: 0.95em; /* **AANGEPAST: Zeer kleine titel** */
-        margin-bottom: 4px;
-    }
-
-    .flashcard p {
-        font-size: 0.7em; /* **AANGEPAST: Zeer kleine tekst** */
-        line-height: 1.2; /* **AANGEPAST: Minimale regelafstand** */
-    }
-
-    .myth-icon {
-        font-size: 2.5em; /* **AANGEPAST: Zeer kleine iconen** */
-        margin-top: 6px; /* **AANGEPAST: Minimale ruimte boven icoon** */
-        margin-bottom: 4px;
-    }
-
-    footer {
-        padding: 10px 8px; /* **AANGEPAST: Minimale footer padding** */
-        margin-top: 15px; /* **AANGEPAST: Minder marge** */
-    }
-
-    footer p {
-        font-size: 0.75em;
-        margin-bottom: 5px;
-    }
-
-    .social-links {
-        gap: 5px; /* **AANGEPAST: Minimale gap** */
-    }
-
-    .social-links a {
-        flex: 1 1 calc(50% - 2.5px); /* Aangepaste flex-basis */
-        font-size: 0.75em;
-    }
-
-    .social-links .social-icon {
-        width: 16px;
-        height: 16px;
-        margin-right: 3px;
-    }
+@media screen and (max-width: 480px) {
+  .flashcard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
