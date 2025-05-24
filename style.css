@@ -34,6 +34,10 @@ h1 {
     margin-bottom: 4px; 
     font-weight: 700;
 }
+.flashcard-front p {
+    font-weight: bold !important;
+    font-size: 19px !important;
+}
 
 .intro-text {
     font-size: 1em;
@@ -116,7 +120,7 @@ h1 {
 }
 
 .flashcard p {
-    font-size: 0.85em;
+    font-size: 1em;
     line-height: 1.4;
     margin: 0;
     text-align: center;
