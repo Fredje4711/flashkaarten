@@ -142,7 +142,7 @@ h1 {
 
 footer {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1000px;
     background-color: var(--dark-main-color);
     color: white;
     text-align: center;
