@@ -10,8 +10,8 @@
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    padding-top: 20px; 
-    padding-bottom: 20px; 
+    padding-top: 0px; 
+    padding-bottom: 0px; 
     background-color: var(--background-color); 
     color: #fff;
     display: flex;
@@ -23,7 +23,7 @@ body {
 
 header {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     max-width: 800px;
     width: 100%;
 }
@@ -31,7 +31,7 @@ header {
 h1 {
     color: #ffffff;
     font-size: 2.2em;
-    margin-bottom: 8px; 
+    margin-bottom: 4px; 
     font-weight: 700;
 }
 
@@ -39,7 +39,7 @@ h1 {
     font-size: 1em;
     color: #ffffff;
     margin-top: 0; 
-    margin-bottom: 15px; 
+    margin-bottom: 0px; 
 }
 
 .flashcard-grid {
@@ -50,7 +50,7 @@ h1 {
     width: 100%;
     justify-content: center;
     padding: 0 10px;
-    margin-bottom: 40px; 
+    margin-bottom: 10px; 
     flex-grow: 1; 
 }
 
@@ -149,7 +149,7 @@ footer {
     padding: 20px 15px;
     box-sizing: border-box;
     border-radius: var(--card-radius);
-    margin-top: 30px;
+    margin-top: 5px;
     box-shadow: var(--card-shadow);
 }
 
