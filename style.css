@@ -203,4 +203,10 @@ footer p {
   body {
     background-color: red; /* testkleur - tijdelijk */
   }
+
+
+@media screen and (max-width: 480px) {
+  .flashcard-grid {
+    padding: 0 8vw; /* nog iets meer ruimte aan zijkanten voor kleine gsm's */
+  }
 }
