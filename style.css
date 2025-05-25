@@ -202,6 +202,6 @@ footer p {
 
 @media screen and (max-width: 480px) {
   .flashcard-grid {
-    padding: 0 5vw; /* nog iets meer ruimte aan zijkanten voor kleine gsm's */
+    padding: 0 2vw; /* nog iets meer ruimte aan zijkanten voor kleine gsm's */
   }
 }
