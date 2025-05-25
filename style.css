@@ -192,8 +192,13 @@ footer p {
     filter: brightness(1.2);
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
+  .flashcard-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 5vw;
+  }
+
   body {
-    background-color: red; /* testkleur */
+    background-color: red; /* testkleur - tijdelijk */
   }
 }
