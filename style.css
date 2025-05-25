@@ -193,8 +193,7 @@ footer p {
 }
 
 @media screen and (max-width: 480px) {
-  .flashcard-grid {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 0 5vw; /* extra ruimte links en rechts */
+  body {
+    background-color: red; /* testkleur */
   }
 }
