@@ -93,7 +93,8 @@
         .btn-next { background: var(--succes); box-shadow: 0 4px 0 #1b4d1f; margin-top: auto; }
 
         .info-box { background: white; padding: 20px; border-radius: 20px; text-align: left; border-top: 6px solid var(--liga-blauw); box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
-        .contact-btn { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--wit); background: var(--liga-donker); padding: 16px; border-radius: 12px; font-weight: bold; margin-top: 15px; justify-content: center; text-align: center; }
+        .contact-btn { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--wit); background: var(--liga-donker); padding: 16px; border-radius: 12px; font-weight: bold; margin-top: 15px; justify-content: center; text-align: center; box-shadow: 0 4px 0 #000044; }
+        .contact-btn:active { transform: translateY(2px); box-shadow: 0 2px 0 #000044; }
     </style>
 </head>
 <body>
@@ -177,17 +178,20 @@
     <div id="contact-screen" class="screen">
         <h2 style="margin-top:10px;">Bedankt voor het spelen!</h2>
         <div class="info-box">
-            <p style="color: var(--liga-donker); font-size: 1.2rem; font-weight: bold; margin-top: 0;">Onze simpele opzoeker voor gsm</p>
+            <p style="color: var(--liga-donker); font-size: 1.2rem; font-weight: bold; margin-top: 0;">Onze <strong>Koolhydraten-app</strong> voor gsm</p>
             <p style="font-size:1rem; line-height:1.4;">
-                Dit spel was een test. Wilt u ook onze simpele <strong>Koolhydraten-app</strong> voor op uw gsm ontvangen? <br><br>
+                Dit spel was een test. Wilt u ook onze simpele <strong>Koolhydraten Calculator-app</strong> voor op uw gsm ontvangen? <br><br>
                 Hiermee kunt u heel eenvoudig van duizenden producten de koolhydraten direct opzoeken.
             </p>
             <p style="font-weight:bold; font-size:1rem; margin-top:15px;">
                 Dit hulpmiddel is <span style="color:var(--accent)">volledig GRATIS</span>.
             </p>
-            <a href="mailto:midden.limburg@diabetes.be?subject=Aanvraag%20gratis%20Koolhydraten-app&body=Beste%20Diabetes%20Liga%20Midden-Limburg%2C%0A%0AIk%20heb%20het%20Duel%20gespeeld%20en%20heb%20interesse%20in%20de%20gratis%20koolhydraten-app.%20Zouden%20jullie%20mij%20de%20uitleg%20willen%20sturen%20om%20deze%20op%20mijn%20gsm%20te%20plaatsen%3F%0A%0AMet%20vriendelijke%20groeten%2C" class="contact-btn">
-                📧 Mail de Diabetes Liga
+            
+            <!-- AANGEPASTE KNOP HIERONDER -->
+            <a href="https://fredje4711.github.io/carbo-app/installatie_calculator.html" class="contact-btn">
+                📲 Bekijk de Koolhydraten Calculator
             </a>
+            
             <hr style="border:0; border-top:1px solid #eee; margin: 15px 0;">
             <a href="https://www.dlml.be" target="_blank" style="color:var(--liga-blauw); font-weight:bold; text-decoration:none; display:block; text-align:center;">🌐 Bezoek onze website www.dlml.be</a>
         </div>
